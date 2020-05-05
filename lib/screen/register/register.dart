@@ -11,7 +11,7 @@ class Register extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          AppName(size: 36, edgeInsets: EdgeInsets.fromLTRB(0, 50, 0, 0)),
+          AppName(edgeInsets: EdgeInsets.fromLTRB(0, 50, 0, 20)),
           RegisterForm()
         ],
       ),

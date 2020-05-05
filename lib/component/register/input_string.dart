@@ -8,22 +8,28 @@ class InputString extends StatelessWidget {
   final IconData iconData;
   final Function onTap;
   final Function validate;
+  final int maxLenght;
+  final ValueChanged<String> onChanged;
+  final bool obscureText;
 
-  InputString(
-    this._labelText, {
-    this.controller,
-    this.hint,
-    this.iconData,
-    this.onTap,
-    this.validate,
-  });
+  InputString(this._labelText,
+      {this.controller,
+      this.hint,
+      this.iconData,
+      this.onTap,
+      this.validate,
+      this.maxLenght,
+      this.onChanged,
+      this.obscureText});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       onTap: this.onTap,
       controller: controller,
-      maxLength: 120,
+      obscureText: this.obscureText == null ? false : this.obscureText,
+      maxLength: maxLenght == null ? null : this.maxLenght,
       keyboardType: TextInputType.text,
       style: TextStyle(
         fontSize: 16,

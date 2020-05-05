@@ -16,7 +16,8 @@ class AppName extends StatelessWidget {
           "Listinha",
           style: TextStyle(
             color: Colors.black,
-            fontSize: this.size == null ? 16 : this.size,
+            fontSize: this.size == null ? 63 : this.size,
+            fontFamily: "DearSunshine"
           ),
         ),
       ),
