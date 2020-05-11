@@ -13,9 +13,7 @@ class Introducing extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           LogoImage(),
-          AppName(
-            size: 36,
-          ),
+          AppName(),
           Description(),
           ButtonContinue()
         ],

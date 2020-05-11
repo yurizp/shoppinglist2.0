@@ -4,10 +4,10 @@ class LogoImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 100, 8, 8),
+      padding: const EdgeInsets.fromLTRB(8, 90, 8, 27),
       child: Image.asset(
         'assets/images/logo_bigger.png',
-        width: 150,
+        height: 120,
       ),
     );
   }

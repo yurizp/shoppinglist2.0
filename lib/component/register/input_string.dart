@@ -32,7 +32,7 @@ class InputString extends StatelessWidget {
       maxLength: maxLenght == null ? null : this.maxLenght,
       keyboardType: TextInputType.text,
       style: TextStyle(
-        fontSize: 16,
+        fontSize: 20,
       ),
       decoration: InputDecoration(
         icon: iconData != null ? Icon(iconData) : null,

@@ -3,21 +3,12 @@ import 'package:flutter/material.dart';
 const AssetImage _defaultImage = AssetImage("assets/images/default_image.png");
 
 
-class CircleAvatarImage extends StatefulWidget {
-  Image _final;
+class CircleAvatarImage extends StatelessWidget {
+  Image image;
 
-  CircleAvatarImage(this._final);
+  CircleAvatarImage(this.image);
 
-  @override
-  State<StatefulWidget> createState() {
-    return __CircleAvatarImageState();
-  }
-}
-
-class __CircleAvatarImageState extends State<CircleAvatarImage> {
-  AnimationController _controller;
-
-  @override
+   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 62,
@@ -32,7 +23,7 @@ class __CircleAvatarImageState extends State<CircleAvatarImage> {
           ),
         ),
         backgroundImage:
-        widget._final == null ? _defaultImage : widget._final.image,
+        image == null ? _defaultImage : image.image,
       ),
     );
   }

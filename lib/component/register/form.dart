@@ -13,6 +13,8 @@ class RegisterForm extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _RegisterForm();
   }
+
+  RegisterForm({Key key}) : super(key: key);
 }
 
 class _RegisterForm extends State<RegisterForm> {
@@ -31,7 +33,7 @@ class _RegisterForm extends State<RegisterForm> {
 
   @override
   void setState(VoidCallback fn) {
-    super.initState();
+    super.setState(fn);
     this._user = new User(
       _textEditingControllerPassword.text,
       _textEditingControllerFullName.text,
@@ -39,9 +41,8 @@ class _RegisterForm extends State<RegisterForm> {
       _textEditingControllerComparePassword.text,
       _image,
     );
-    this.build(context);
+    debugPrint("PAssou");
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +50,11 @@ class _RegisterForm extends State<RegisterForm> {
         key: _formKey,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(23, 0, 23, 0),
-          child: Column(children: <Widget>[
+          child: Column(
+
+              children: <Widget>[
             GestureDetector(
-              child: CircleAvatarImage(_image),
+              child: CircleAvatarImage(_user == null ? null : _user.image),
               onTap: getImage,
             ),
             Padding(
@@ -114,6 +117,7 @@ class _RegisterForm extends State<RegisterForm> {
   Future getImage() async {
     File image = await ImagePicker.pickImage(source: ImageSource.camera);
     this._image = Image.file(image);
+//    _image = null;
     setState(() {
       _user = null;
     });
